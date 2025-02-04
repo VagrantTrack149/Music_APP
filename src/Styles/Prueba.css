@@ -1,0 +1,13 @@
+img{
+    max-width: 100px;
+    max-height: 100px;
+    height: 10px;
+    width: 10px;
+
+}
+#Titulo{
+    color: aqua;
+}
+body{
+    background-color: white;
+}

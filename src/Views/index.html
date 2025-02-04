@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="../Styles/Index-css.css">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">-->
+</head>
+
+<body>
+   
+    <div class="player">
+        <h1>Reproductor de Música</h1>
+        <audio id="audio" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <input type="file" id="fileInput" accept="audio/*">
+        <a href="prueba.html">Pruebame </a>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const audio = document.getElementById('audio');
+        const audioSource = document.getElementById('audioSource');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                audioSource.src = fileURL;
+                audio.load();
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
