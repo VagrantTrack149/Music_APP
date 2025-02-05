@@ -96,7 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (dirDefault != null) { 
                         const fileURL = dirDefault + '/' + fileName;
                         console.log(fileURL);
-        
+                        console.log(fileName)
+                        document.getElementById('Nombre-song').innerHTML=fileName
+                        
                         const audio = document.getElementById('audio');
                         const source = document.getElementById('audioSource');
         
