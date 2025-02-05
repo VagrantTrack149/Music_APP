@@ -1,6 +1,8 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const { eventNames } = require('process');
+const { json } = require('stream/consumers');
 
 let mainWindow;
 
@@ -50,6 +52,35 @@ ipcMain.handle('read-audio-files', async (event, directoryPath) => {
         });
     });
 });
+Default_dir="src/path.json"
+ipcMain.handle('write-directory', async (event, directoryPath) => {
+    return new Promise((resolve, reject) => {
+        const data = {
+            directory: directoryPath
+        };
+
+        const jsonData = JSON.stringify(data, null, 2);
+
+        fs.writeFile(Default_dir, jsonData, (err) => {
+            if (err) {
+                return reject(`Error al guardar la dirección por defecto: ${err.message}`);
+            }
+            resolve('Ruta guardada correctamente en path.json');
+        });
+    });
+});
+
+ipcMain.handle('Read-directory', (event) => {
+    try {
+        const data = fs.readFileSync(Default_dir, 'utf-8');
+        const jsonData = JSON.parse(data); 
+        return jsonData; 
+    } catch (err) {
+        throw new Error('Error al leer la dirección por defecto: ' + err.message);
+    }
+});
+
+
 
 app.on('ready', createWindow);
 

@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Música</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <title>Just Music</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <link rel="stylesheet" href="..\Styles\Prueba.css">
 </head>
 <body>
-    <h1 id="Titulo">Reproductor de Música</h1>
+    <h1 id="Titulo">Just Music</h1>
     <button id="select-directory">Seleccionar Carpeta</button>
-    <ul id="music-list"></ul>
+    <table id="music-table">
+        <thead>
+            <tr>
+                <th class="columna-1">Elemento</th>
+                <th class="columna-2">Duración</th>
+                <th class="columna-3" id="">Play</th>
+            </tr>
+        </thead>
+        <tbody id="music-list">
+            <tr><td class="columna-1 Elemento">1000 Miles.mp3</td><td class="columna-2 Duracion">3:04</td><td class="columna-3" id="1000 Miles.mp3">▶️</td></tr>
+        </tbody>
+    </table>
+    <div id="Audio-Controles" class="sticky-bottom">
+        <audio id="audio" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
     <script src="../../renderer.js"></script>
 </body>
 </html>

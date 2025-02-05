@@ -1,13 +1,68 @@
-img{
-    max-width: 100px;
-    max-height: 100px;
-    height: 10px;
-    width: 10px;
 
+#Titulo {
+    color: Black;
+    font-style: italic;
+    
 }
-#Titulo{
-    color: aqua;
-}
-body{
+
+body {
     background-color: white;
+}
+
+#music-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#music-table th, #music-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#music-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.columna-1 {
+    width: 60%; 
+}
+
+.columna-2 {
+    width: 20%; 
+}
+
+.columna-3 {
+    width: 20%;
+    text-align: center; 
+}
+
+.Elemento {
+    padding: 10px;
+}
+
+.Play {
+    cursor: pointer;
+    text-align: center; 
+}
+tr:hover{
+    font-size: large;
+    background-color: #fcd8d8;
+}
+.Play:hover {
+    background-color: #ffa9a9;
+    font-size:x-large;
+}
+
+.sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
