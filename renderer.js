@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log(fileURL);
                         console.log(fileName)
                         document.getElementById('Nombre-song').innerHTML=fileName
-                        
+                        document.getElementById('Titulo').innerHTML='Just Music'+'-'+fileName
                         const audio = document.getElementById('audio');
                         const source = document.getElementById('audioSource');
         
