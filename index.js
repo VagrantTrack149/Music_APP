@@ -80,6 +80,36 @@ ipcMain.handle('Read-directory', (event) => {
     }
 });
 
+ipcMain.handle('Read-Image', async (event, imgpath) => {
+    try {
+        // Verificar si la ruta de la imagen es válida
+        if (!imgpath || typeof imgpath !== 'string') {
+            throw new Error('La ruta de la imagen no es válida');
+        }
+
+        // Leer la imagen como un buffer
+        const data = fs.readFileSync(imgpath);
+
+        // Crear la carpeta si no existe
+        const fontDir = path.join(__dirname, 'Static', 'Font');
+        if (!fs.existsSync(fontDir)) {
+            fs.mkdirSync(fontDir, { recursive: true });
+        }
+
+        // Guardar la imagen en la carpeta 'Static/Font'
+        const fileName = path.basename(imgpath);
+        const savepath = path.join(fontDir, fileName);
+        fs.writeFileSync(savepath, data);
+
+        // Devolver la ruta relativa de la imagen guardada
+        return `Static/Font/${fileName}`;
+    } catch (error) {
+        console.error('Error al leer o guardar la imagen:', error);
+        throw new Error('No se pudo leer o guardar la imagen');
+    }
+});
+
+
 
 
 app.on('ready', createWindow);

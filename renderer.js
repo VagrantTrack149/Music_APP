@@ -1,12 +1,12 @@
-const path = 'D:/Documentos/JustMusic/src/Font/boton-de-play.png';
 
 async function loadAudioFiles(directory) {
     const audioFiles = await window.electronAPI.readAudioFiles(directory);
     const musicList = document.getElementById('music-list');
-
+    var numero= 0;
     musicList.innerHTML = ''; 
 
     audioFiles.forEach(file => {
+        numero+=1;
         const row = document.createElement('tr');
         const fileName = file.split('\\').pop();
 
@@ -19,18 +19,26 @@ async function loadAudioFiles(directory) {
         colDuracion.className = 'columna-2 Duracion';
         colDuracion.textContent = '...'; 
         colDuracion.id = fileName;
-
+        
         const colPlay = document.createElement('td');
         colPlay.className = 'columna-3 Play';
         colPlay.id = fileName;
-        colPlay.innerHTML = '▶️'; 
+        colPlay.innerHTML = '<div class="play-pause-container"><input type="checkbox" id="play-pause-'+numero+'" class="play-pause-checkbox"><label for="play-pause-'+numero+'" class="play-pause-button"></label></div>'; 
 
         row.appendChild(colElemento);
         row.appendChild(colDuracion);
         row.appendChild(colPlay);
 
         musicList.appendChild(row);
+        const checkbox = colPlay.querySelector('.play-pause-checkbox');
 
+        checkbox.addEventListener('click', () => {
+        document.querySelectorAll('.play-pause-checkbox').forEach(otherCheckbox => {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        });
         const audio = new Audio(file);
         audio.addEventListener('loadedmetadata', () => {
             const duration = audio.duration;

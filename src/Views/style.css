@@ -1,0 +1,57 @@
+
+.play-pause-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+}
+
+.play-pause-checkbox {
+  display: none;
+}
+
+.play-pause-button {
+  width: 30px; 
+  height: 30px; 
+  background-color: #020000;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.play-pause-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 7.5px solid transparent; 
+  border-bottom: 7.5px solid transparent; 
+  border-left: 12.5px solid white; 
+}
+.play-pause-checkbox:checked + .play-pause-button {
+  background-color: #d60000;
+}
+.play-pause-checkbox:checked + .play-pause-button::before {
+  width: 10px; 
+  height: 15px; 
+  border: none;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 30%,
+    transparent 30%,
+    transparent 70%,
+    white 70%,
+    white 100%
+  );
+  transform: translate(-50%, -50%);
+
+}
+
+.play-pause-button:hover {
+  background-color: #d60000;
+}
