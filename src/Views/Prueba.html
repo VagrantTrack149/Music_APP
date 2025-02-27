@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="Titulo">Just Music</title>
+    <link rel="shortcut icon" href="../../Static/Font/hard-drive.png" type="image/x-icon">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <link rel="stylesheet" href="../../Static/Styles/Prueba.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div id="loader">
+        <img src="../../Static/Font/hard-drive.png" alt="">
+    </div>
+    <div class="content" style="display: none;">
     <h1 id="Titulo">Just Music</h1>
     <button id="select-directory">Seleccionar Carpeta</button>
-    <a href="prueba_imagen.html">Pruebame</a>
-    <a href="boton.html">boton</a>
     <table id="music-table">
         <thead>
             <tr>
@@ -31,6 +34,7 @@
             <source id="audioSource" src="" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
         </audio>
+    </div>
     </div>
     <script src="../../renderer.js"></script>
 </body>

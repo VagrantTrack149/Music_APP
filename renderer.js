@@ -31,14 +31,57 @@ async function loadAudioFiles(directory) {
 
         musicList.appendChild(row);
         const checkbox = colPlay.querySelector('.play-pause-checkbox');
+        const PlayPauseButton= colPlay.querySelector('.play-pause-button');
 
-        checkbox.addEventListener('click', () => {
+        checkbox.addEventListener('change', () => {
+        const ConAudio = document.getElementById('audio');
+        const Source_audio= document.getElementById('audioSource');
+        if (checkbox.checked) {
+            Source_audio.src=file;
+            ConAudio.load();
+            ConAudio.play();
+        }else{
+            ConAudio.pause();
+        }
         document.querySelectorAll('.play-pause-checkbox').forEach(otherCheckbox => {
-                if (otherCheckbox !== checkbox) {
-                    otherCheckbox.checked = false;
-                }
-            });
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
         });
+        
+        Source_sucia=Source_audio.src;
+        Source_clean=Source_sucia.replace("file:///","");
+        Source_clean_1=Source_clean.replace(/\//g,"\\");
+        Source_clean_2=Source_clean_1.replace(/%20/g,' ');
+
+        console.log(Source_clean_2);
+        console.log(file);
+        
+        // Escuchar eventos del reproductor de audio
+        ConAudio.addEventListener('play', () => {
+            
+            
+            if (Source_clean_2==file) {
+                checkbox.checked = true;
+                console.log("Play");
+            }
+        });
+
+        ConAudio.addEventListener('pause', () => {
+            if (Source_clean_2==file) {
+                checkbox.checked = false;
+                console.log("Pause");    
+            }
+        });
+
+        ConAudio.addEventListener('ended', () => {
+            if (Source_clean_2==file) {
+                checkbox.checked = false;
+                console.log("Final");
+            }
+        });
+
+    });
         const audio = new Audio(file);
         audio.addEventListener('loadedmetadata', () => {
             const duration = audio.duration;
@@ -80,7 +123,7 @@ document.getElementById('select-directory').addEventListener('click', async () =
     }
 });
 
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const musicList = document.getElementById('music-list');
 
@@ -123,4 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+});
+
+*/
+window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+    
+    document.getElementById('content').style.display = 'block';
 });
