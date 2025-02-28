@@ -53,29 +53,28 @@ async function loadAudioFiles(directory) {
         Source_clean=Source_sucia.replace("file:///","");
         Source_clean_1=Source_clean.replace(/\//g,"\\");
         Source_clean_2=Source_clean_1.replace(/%20/g,' ');
-
-        console.log(Source_clean_2);
+        Source_clean_3=decodeURIComponent(Source_clean_2);
+        console.log(Source_clean_3);
         console.log(file);
-        
-        // Escuchar eventos del reproductor de audio
+    
         ConAudio.addEventListener('play', () => {
             
             
-            if (Source_clean_2==file) {
+            if (Source_clean_3==file) {
                 checkbox.checked = true;
                 console.log("Play");
             }
         });
 
         ConAudio.addEventListener('pause', () => {
-            if (Source_clean_2==file) {
+            if (Source_clean_3==file) {
                 checkbox.checked = false;
                 console.log("Pause");    
             }
         });
 
         ConAudio.addEventListener('ended', () => {
-            if (Source_clean_2==file) {
+            if (Source_clean_3==file) {
                 checkbox.checked = false;
                 console.log("Final");
             }
@@ -98,11 +97,13 @@ async function loadAudioFiles(directory) {
     });
 }
 
+Ruta= document.getElementById('Ruta');
 window.electronAPI.ReadDir().then((data) => {
         const dirDefault = data.directory;
         console.log('Directorio leído:', dirDefault); 
 
         if (dirDefault != null) { 
+            Ruta.innerHTML=dirDefault;
             loadAudioFiles(dirDefault); 
         }
     })
@@ -114,9 +115,10 @@ document.getElementById('select-directory').addEventListener('click', async () =
     try {
         const directoryPath = await window.electronAPI.openDirectoryDialog();
         await window.electronAPI.WriteDefaultDir(directoryPath);
-
+        
         if (directoryPath) {
-            await loadAudioFiles(directoryPath); 
+            await loadAudioFiles(directoryPath);
+            Ruta.innerHTML=directoryPath; 
         }
     } catch (error) {
         console.error(error);

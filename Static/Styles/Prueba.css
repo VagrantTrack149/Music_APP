@@ -1,12 +1,11 @@
-
+/*body{
+    color: #d9d8d8;
+    background-color: rgb(18, 18, 18);
+}*/
 #Titulo {
     color: Black;
     font-style: italic;
     
-}
-
-body {
-    background-color: white;
 }
 
 #music-table {
@@ -108,4 +107,10 @@ tr:hover{
 #select-directory img{
     width: 20px;
     height: 20px;
+    margin: 2px;
+}
+#select-directory{
+    background-color: white;
+    border-radius: 50px;
+
 }
