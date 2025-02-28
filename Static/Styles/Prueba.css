@@ -2,27 +2,35 @@
     color: #d9d8d8;
     background-color: rgb(18, 18, 18);
 }*/
+@font-face {
+    font-family: 'Bungee Tint';
+    src: url("../Font/BungeeTint-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
 #Titulo {
     color: Black;
-    font-style: italic;
+    font-family: 'Bungee Tint', sans-serif;
     
 }
 
 #music-table {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 #music-table th, #music-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #b8b8b8;
+    padding: 4px;
 }
 
-#music-table th {
+/*#music-table th {
     background-color: #f4f4f4;
     color: #333;
-}
+}*/
 
 .columna-1 {
     width: 60%; 
@@ -94,6 +102,7 @@ tr:hover{
     display: flex;
     gap: 10px; 
     margin-bottom: 10px;
+    margin-left: 5%;
 }
 
 #MinLogo {
@@ -112,5 +121,12 @@ tr:hover{
 #select-directory{
     background-color: white;
     border-radius: 50px;
+    margin-left: 5%;
 
+}
+#time{
+    max-width: 40px;
+    max-height: 40px;
+    width: 30px;
+    height: 30px;
 }

@@ -36,6 +36,7 @@ async function loadAudioFiles(directory) {
         checkbox.addEventListener('change', () => {
         const ConAudio = document.getElementById('audio');
         const Source_audio= document.getElementById('audioSource');
+        document.getElementById('Nombre-song').innerHTML=fileName
         if (checkbox.checked) {
             Source_audio.src=file;
             ConAudio.load();
