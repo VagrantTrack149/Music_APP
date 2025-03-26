@@ -16,6 +16,14 @@
       </label>
     </div>
 <!-- partial -->
-  
+<div class="custom-audio-player">
+  <audio id="audio">
+    <source src="audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  <button id="play-pause">Play</button>
+  <input type="range" id="seek-bar" value="0">
+  <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /*body{
-    color: #d9d8d8;
-    background-color: rgb(18, 18, 18);
+    background: rgb(145,159,246);
+    background: radial-gradient(circle, rgba(145,159,246,1) 0%, rgba(154,94,94,1) 100%);;
 }*/
 @font-face {
     font-family: 'Bungee Tint';
@@ -20,6 +20,7 @@
     margin: 0 auto;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 10%;
 }
 
 #music-table th, #music-table td {
@@ -130,3 +131,21 @@ tr:hover{
     width: 30px;
     height: 30px;
 }
+#Audio-Controles{
+    display: inline-block;
+}
+
+.sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+/*
+#Nombre-song{
+    display: inline-block;
+    right: 28%;
+    position: relative;
+}*/

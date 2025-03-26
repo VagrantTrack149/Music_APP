@@ -10,7 +10,8 @@
   "author": "VagrantTrack149",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^34.0.2"
+    "electron": "^34.0.2",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "express": "^4.21.2",
