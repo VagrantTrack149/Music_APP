@@ -1,13 +1,15 @@
 {
   "name": "justmusic",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Music Player",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+     "pack": "electron-builder --dir",
+    "dist": "electron-builder --windows"
   },
-  "author": "VagrantTrack149",
+  "author": "Neil Otniel Moreno Rivera",
   "license": "ISC",
   "devDependencies": {
     "electron": "^34.0.2",
@@ -16,5 +18,12 @@
   "dependencies": {
     "express": "^4.21.2",
     "fs": "^0.0.1-security"
+  },
+  "build": {
+    "appId": "com.tuempresa.tuapp",
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "icono.ico"
+    }
   }
 }
