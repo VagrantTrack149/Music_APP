@@ -11,9 +11,12 @@ function createWindow() {
         width: 800,
         height: 600,
         autoHideMenuBar: true,
+         contentSecurityPolicy: "default-src 'self' 'unsafe-inline'; script-src 'self'",
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
+            enableRemoteModule:false,
+            sandbox:true,
             preload: path.join(__dirname, 'preload.js'),
         },
     });
@@ -53,7 +56,7 @@ ipcMain.handle('read-audio-files', async (event, directoryPath) => {
         });
     });
 });
-Default_dir="src/path.json"
+Default_dir="path.json"
 ipcMain.handle('write-directory', async (event, directoryPath) => {
     return new Promise((resolve, reject) => {
         const data = {

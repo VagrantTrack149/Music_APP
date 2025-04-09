@@ -1,5 +1,5 @@
 {
-  "name": "justmusic",
+  "name": "Just-Music",
   "version": "0.2.0",
   "description": "Music Player",
   "main": "index.js",
@@ -20,7 +20,7 @@
     "fs": "^0.0.1-security"
   },
   "build": {
-    "appId": "com.tuempresa.tuapp",
+    "appId": "com.TitanCosmos.JustMusic",
     "win": {
       "target": ["nsis", "portable"],
       "icon": "icono.ico"
