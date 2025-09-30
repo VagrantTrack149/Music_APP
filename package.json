@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --windows"
+    "dist": "electron-builder --windows",
+    "watch:css": "npx @tailwindcss/cli -i ./input.css -o ./Static/Styles/output.css --watch"
   },
   "author": "Neil Otniel Moreno Rivera",
   "license": "ISC",
@@ -16,9 +17,10 @@
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
-    "angular": "^1.8.2",
+    "@tailwindcss/cli": "^4.1.13",
     "express": "^4.21.2",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "tailwindcss": "^4.1.13"
   },
   "build": {
     "appId": "com.TitanCosmos.JustMusic",

@@ -10,19 +10,22 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline';">
     <link rel="stylesheet" href="../../Static/Styles/Prueba.css">
     <link rel="stylesheet" href="./style.css">
+    <!--<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>-->
+    <link rel="stylesheet" href="../../Static/Styles/output.css">
+
 </head>
-<body>
+<body class="bg-black- text-white min-h-screen flex flex-col items-center justify-center">
     <div id="loader">
             <img src="../../Static/Font/hard-drive.png" alt="">
     </div>
-    <div id="content" style="display: none;">
+    <div id="contents" style="display: none;">
         <div id="logo_div">
             <img id="MinLogo" src="../../Static/Font/hard-drive.png" alt=""> 
             <h1 id="Titulo" >   Just Music</h1>
         </div>
     <button id="select-directory"><img src="../../Static/Font/folder.png" alt=""></button>
     <span id="Ruta">Sin ruta</span>
-    <table id="music-table">
+    <table id="music-table" class="min-w-full bg-white text-black bg-blue-150">
         <thead>
             <tr>
                 <th class="columna-1">Canción</th>
@@ -37,7 +40,7 @@
         <div id="Nombre-song"></div>
         <audio id="audio" controls>
             <source id="audioSource" src="" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
+            <!--Tu navegador no soporta el elemento de audio.-->
         </audio>
     </div>
     </div>

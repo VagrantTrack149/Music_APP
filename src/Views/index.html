@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de Música</title>
     <link rel="stylesheet" href="../Styles/Index-css.css">  
-    <script src="../../node_modules/angular/angular.min.js"></script>
+    <!--<script src="../../node_modules/angular/angular.min.js"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>-->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
 </head>
 
 <body>
    
-    <div class="player">
+    <div class="player flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <h1>Reproductor de Música</h1>
         <audio id="audio" controls>
             <source id="audioSource" src="" type="audio/mpeg">
