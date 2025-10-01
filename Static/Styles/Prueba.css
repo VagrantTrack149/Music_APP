@@ -24,8 +24,8 @@
 }
 
 #music-table th, #music-table td {
-    border: 1px solid #b8b8b8;
-    padding: 4px;
+    /*border: 1px solid;
+    padding: 4px;*/
 }
 
 /*#music-table th {

@@ -14,23 +14,24 @@
     <link rel="stylesheet" href="../../Static/Styles/output.css">
 
 </head>
-<body class="bg-black- text-white min-h-screen flex flex-col items-center justify-center">
+<!--class="bg-black- text-white flex flex-col w-max-content h-screen mx-auto"-->
+<body class="bg-black text-white flex max-h-dvw mx-auto items-center justify-center ">
     <div id="loader">
-            <img src="../../Static/Font/hard-drive.png" alt="">
+            <img class="bg-white p-1 m-1" src="../../Static/Font/hard-drive.png" alt="">
     </div>
     <div id="contents" style="display: none;">
-        <div id="logo_div">
-            <img id="MinLogo" src="../../Static/Font/hard-drive.png" alt=""> 
+        <div id="logo_div" class="flex left-0">
+            <img id="MinLogo" class="" src="../../Static/Font/hard-drive.png" alt=""> 
             <h1 id="Titulo" >   Just Music</h1>
         </div>
-    <button id="select-directory"><img src="../../Static/Font/folder.png" alt=""></button>
-    <span id="Ruta">Sin ruta</span>
-    <table id="music-table" class="min-w-full bg-white text-black bg-blue-150">
+    <button id="select-directory" class="bg-white m-0.5 p-1"><img src="../../Static/Font/folder.png" alt=""></button>
+    <span id="Ruta" class="text-center text-white">Sin ruta</span>
+    <table id="music-table" class="min-w-full  text-purple-200">
         <thead>
-            <tr>
+            <tr class="border-r-gray-400 border-t-gray-400 p-1.5 border-2 border-double">
                 <th class="columna-1">Canción</th>
                 <th class="columna-2"><img id="time" src="../../Static/Font/time.png"></th>
-                <th class="columna-3" id=""></th>
+                <th class="columna-3" id="Play"></th>
             </tr>
         </thead>
         <tbody id="music-list">

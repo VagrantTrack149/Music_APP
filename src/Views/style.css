@@ -32,7 +32,7 @@ rgb(166, 77, 121)
 .play-pause-button {
   width: 30px; 
   height: 30px; 
-  background-color: #020000;
+  background-color: #ffffff;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
@@ -49,7 +49,7 @@ rgb(166, 77, 121)
   height: 0;
   border-top: 7.5px solid transparent; 
   border-bottom: 7.5px solid transparent; 
-  border-left: 12.5px solid white; 
+  border-left: 12.5px solid black; 
 }
 .play-pause-checkbox:checked + .play-pause-button {
   background-color: #d60000;
